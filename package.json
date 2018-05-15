@@ -1,0 +1,25 @@
+{
+  "name": "jest-summary-reporter",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "tony@lownds.com",
+  "repository": "tln/jest-summary-reporter",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^22.4.3"
+  },
+  "jest": {
+    "reporters": [
+      ["<rootDir>/index.js", {"failuresOnly": false}], 
+      "default"
+    ]
+  },
+  "dependencies": {
+    "chalk": "^2.4.1"
+  }
+}
