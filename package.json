@@ -1,6 +1,6 @@
 {
   "name": "jest-summary-reporter",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -15,10 +15,18 @@
   },
   "jest": {
     "reporters": [
-      ["<rootDir>/index.js", {"failuresOnly": false}], 
+      [
+        "<rootDir>/index.js",
+        {
+          "failuresOnly": false
+        }
+      ],
       "default"
     ],
-    "testPathIgnorePatterns": ["<rootDir>/node_modules/", "<rootDir>/test/fixture/"]
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules/",
+      "<rootDir>/test/fixture/"
+    ]
   },
   "dependencies": {
     "chalk": "^2.4.1"
