@@ -36,7 +36,7 @@ class SummaryReporter {
     this.log('');
     this.log(summaryLineStyle(this.summaryLine(results)));
     this.log('');
-    for (let file of results.testResults) {
+    for (let file of this.sortResults(results.testResults)) {
       if (this._failuresOnly && !file.numFailingTests) continue;
       this.resetPath();
       this.log(fileStyle(relative(this._rootDir, file.testFilePath)));
@@ -47,6 +47,14 @@ class SummaryReporter {
       }
     }
     this.log('');
+  }
+
+  /** Return copy of input, sorting by filename alphabetically.
+   * Sorting ensures the output is stable, needed for snapshot testing.
+   */
+  sortResults(testResults) {
+    let prop = 'testFilePath';
+    return testResults.concat().sort((a, b) => a.testFilePath.localeCompare(b.testFilePath));
   }
 
   summaryLine({numFailedTestSuites, numPassedTests}) {
