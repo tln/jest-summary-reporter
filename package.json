@@ -17,7 +17,8 @@
     "reporters": [
       ["<rootDir>/index.js", {"failuresOnly": false}], 
       "default"
-    ]
+    ],
+    "testPathIgnorePatterns": ["<rootDir>/node_modules/", "<rootDir>/test/fixture/"]
   },
   "dependencies": {
     "chalk": "^2.4.1"

@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when misconfigured to be only reporter runs tests and returns code=1 1`] = `
+Object {
+  "code": 1,
+  "stderr": "
+Summary of failed tests
+
+test/fixture/fail.test.js
+  ✕ fails
+  nested
+    deeply nested
+      ✕ fails
+test/fixture/fail2.test.js
+  ✕ fails
+  nested
+    deeply nested
+      ✕ fails
+
+",
+  "stdout": "",
+}
+`;
+
+exports[`with default configuration final message indicates when tests all pass 1`] = `
+Object {
+  "code": 0,
+  "stderr": "
+
+All tests passed
+
+
+",
+  "stdout": "",
+}
+`;
+
+exports[`with default configuration runs tests showing failures at end 1`] = `
+Object {
+  "code": 1,
+  "stderr": "
+
+Summary of failed tests
+
+test/fixture/fail.test.js
+  ✕ fails
+  nested
+    deeply nested
+      ✕ fails
+test/fixture/fail2.test.js
+  ✕ fails
+  nested
+    deeply nested
+      ✕ fails
+
+",
+  "stdout": "",
+}
+`;
+
+exports[`with failuresOnly=false configuration runs tests showing all tests at end 1`] = `
+Object {
+  "code": 1,
+  "stderr": "
+
+Summary of tests
+
+test/fixture/fail.test.js
+  ✕ fails
+  ✓ passes
+  nested
+    ✓ nested pass
+    ○ skipped test
+  nested
+    deeply nested
+      ✓ passes
+      ✕ fails
+test/fixture/fail2.test.js
+  ✕ fails
+  ✓ passes
+  nested
+    ✓ nested pass
+    ○ skipped test
+  nested
+    deeply nested
+      ✓ passes
+      ✕ fails
+
+",
+  "stdout": "",
+}
+`;

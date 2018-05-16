@@ -1,0 +1,8 @@
+{
+  "rootDir": "../..",
+  "testMatch": ["<rootDir>/test/fixture/*.test.js"],
+  "reporters": [
+    "default",
+    "./index"
+  ]
+}
